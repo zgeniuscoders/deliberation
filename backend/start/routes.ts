@@ -8,9 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import MajorsController from "#controllers/Api/majors_controller";
 
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+
+router.get('/', [MajorsController, 'index'])

@@ -14,6 +14,9 @@ export default class extends BaseSchema {
         .unsigned()
         .references("matters.id")
 
+      table.integer("teacher_id")
+        .unsigned()
+        .references("teachers.id")
 
       table.timestamp('created_at')
       table.timestamp('updated_at')
