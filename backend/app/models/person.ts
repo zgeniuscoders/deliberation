@@ -15,7 +15,7 @@ export default class Person extends BaseModel {
   declare firstname: string
 
   @column()
-  declare lastname: string
+  declare lastname: string | null
 
   @column()
   declare gender: string

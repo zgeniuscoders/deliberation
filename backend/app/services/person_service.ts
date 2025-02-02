@@ -16,9 +16,9 @@ export class PersonService {
 
     const data = this.ctx.request.all()
 
-    await createPersonValidator.validate(data)
+    const validateData = await createPersonValidator.validate(data)
 
-    return await Person.create(data)
+    return await Person.create(validateData)
 
   }
 

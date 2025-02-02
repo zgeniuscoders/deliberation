@@ -24,6 +24,6 @@ export default class Teacher extends BaseModel {
   @manyToMany(() => Major)
   declare majors: relations.ManyToMany<typeof Major>
 
-  @belongsTo(() => Person)
+  @belongsTo(() => Person, {foreignKey: 'peopleId'})
   declare person: relations.BelongsTo<typeof Person>
 }

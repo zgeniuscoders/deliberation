@@ -10,7 +10,7 @@ export default class Student extends BaseModel {
   declare id: number
 
   @column()
-  declare personId: number
+  declare peopleId: number
 
   @column()
   declare majorId: number
@@ -24,11 +24,11 @@ export default class Student extends BaseModel {
   @column.dateTime({autoCreate: true, autoUpdate: true})
   declare updatedAt: DateTime
 
+  @belongsTo(() => Person,{foreignKey: 'peopleId'})
+  declare person: relations.BelongsTo<typeof Person>
+
   @belongsTo(() => User)
   declare user: relations.BelongsTo<typeof User>
-
-  @belongsTo(() => Person)
-  declare person: relations.BelongsTo<typeof Person>
 
   @belongsTo(() => Major)
   declare major: relations.BelongsTo<typeof Major>
