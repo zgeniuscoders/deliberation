@@ -1,4 +1,4 @@
-import type { HttpContext } from '@adonisjs/core/http'
+import type {HttpContext} from '@adonisjs/core/http'
 import {inject} from "@adonisjs/core";
 import {MajorService} from "#services/major_service";
 
@@ -20,20 +20,20 @@ export default class MajorsController {
   /**
    * Handle form submission for the create action
    */
-  async store({ request }: HttpContext) {}
+  async store({}: HttpContext) {
+    await this.majorsService.create()
+  }
 
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {}
+  async show({}: HttpContext) {
+  }
 
   /**
    * Handle form submission for the edit action
    */
-  async update({ params, request }: HttpContext) {}
+  async update({}: HttpContext) {
+  }
 
-  /**
-   * Delete record
-   */
-  async destroy({ params }: HttpContext) {}
 }

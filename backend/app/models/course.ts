@@ -8,6 +8,15 @@ export default class Course extends BaseModel {
   @column({isPrimary: true})
   declare id: number
 
+  @column()
+  declare name: string
+
+  @column()
+  declare matterId: number
+
+  @column()
+  declare teacherId: number
+
   @column.dateTime({autoCreate: true})
   declare createdAt: DateTime
 

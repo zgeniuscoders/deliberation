@@ -11,6 +11,10 @@ export default class extends BaseSchema {
         .unsigned()
         .references("users.id")
 
+      table.integer("major_id")
+        .unsigned()
+        .references("majors.id")
+
       table.integer("people_id")
         .unsigned()
         .references("people.id")

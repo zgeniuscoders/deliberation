@@ -8,7 +8,9 @@ export default class extends BaseSchema {
       table.increments('id')
 
       table.string("name")
+        .notNullable()
       table.string("code")
+        .notNullable()
 
       table.integer("category_id")
         .unsigned()

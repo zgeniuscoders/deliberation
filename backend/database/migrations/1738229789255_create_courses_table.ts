@@ -1,4 +1,4 @@
-import { BaseSchema } from '@adonisjs/lucid/schema'
+import {BaseSchema} from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
   protected tableName = 'courses'
@@ -8,7 +8,13 @@ export default class extends BaseSchema {
       table.increments('id')
 
       table.string("name")
+        .notNullable()
       table.integer("credit")
+        .notNullable()
+
+      table.integer("major_id")
+        .unsigned()
+        .references("majors.id")
 
       table.integer("matter_id")
         .unsigned()
