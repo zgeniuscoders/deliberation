@@ -10,7 +10,10 @@ export default class MattersController {
   }
 
   async index({}: HttpContext) {
-    return await this.matterService.all()
+    const matters = await this.matterService.all()
+    return {
+      data: matters
+    }
   }
 
   async store({}: HttpContext) {

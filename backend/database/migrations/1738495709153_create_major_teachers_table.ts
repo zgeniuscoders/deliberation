@@ -10,10 +10,12 @@ export default class extends BaseSchema {
       table.integer('major_id')
         .unsigned()
         .references('majors.id')
+        .onDelete('CASCADE')
 
       table.integer('teacher_id')
         .unsigned()
         .references('teachers.id')
+        .onDelete('CASCADE')
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

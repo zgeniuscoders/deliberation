@@ -1,4 +1,4 @@
-import type { HttpContext } from '@adonisjs/core/http'
+import type {HttpContext} from '@adonisjs/core/http'
 import {inject} from "@adonisjs/core";
 import {TeacherService} from "#services/teacher_service";
 import {PersonService} from "#services/person_service";
@@ -12,7 +12,10 @@ export default class TeacherController {
   }
 
   async index({}: HttpContext) {
-    return await this.teacherService.all()
+    const data = await this.teacherService.all()
+    return {
+      "data": data
+    }
   }
 
   async store({}: HttpContext) {

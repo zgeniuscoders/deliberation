@@ -11,9 +11,11 @@ export class TeacherService {
   }
 
   async all() {
-    return Teacher
+
+    return await Teacher
       .query()
       .preload('person')
+
   }
 
 

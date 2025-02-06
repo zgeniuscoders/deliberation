@@ -19,6 +19,7 @@ export default class extends BaseSchema {
       table.integer("major_id")
         .unsigned()
         .references("majors.id")
+        .onDelete('CASCADE')
 
       table.integer("semester_id")
         .unsigned()

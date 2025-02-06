@@ -12,10 +12,6 @@ export default class extends BaseSchema {
       table.integer("credit")
         .notNullable()
 
-      table.integer("major_id")
-        .unsigned()
-        .references("majors.id")
-
       table.integer("matter_id")
         .unsigned()
         .references("matters.id")

@@ -14,7 +14,10 @@ export default class MajorsController {
    * Display a list of resource
    */
   async index({}: HttpContext) {
-    return this.majorsService.all()
+    const majors = await this.majorsService.all()
+    return {
+      data: majors
+    }
   }
 
   /**
@@ -28,12 +31,24 @@ export default class MajorsController {
    * Show individual record
    */
   async show({}: HttpContext) {
+    const major = await this.majorsService.findById()
+    return {
+      data: major
+    }
   }
 
   /**
    * Handle form submission for the edit action
    */
   async update({}: HttpContext) {
+
+  }
+
+  /**
+   * Delete record
+   */
+  async destroy({}: HttpContext) {
+    await this.majorsService.delete()
   }
 
 }

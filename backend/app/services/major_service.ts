@@ -16,6 +16,12 @@ export class MajorService {
       .preload('faculty')
   }
 
+  async findById() {
+    const id = this.ctx.params.id
+
+    return await Major.findOrFail(id)
+  }
+
   async create() {
 
     const data = this.ctx.request.all()
@@ -38,6 +44,11 @@ export class MajorService {
 
     major.related('teachers').attach([validateData.teacherId])
 
+  }
+
+  async delete() {
+    const major = await this.findById()
+    await major.delete()
   }
 
 }

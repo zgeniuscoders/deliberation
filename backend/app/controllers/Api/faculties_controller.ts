@@ -16,7 +16,10 @@ export default class FacultiesController {
    * Display a list of resource
    */
   async index({}: HttpContext) {
-    return this.facultyService.all()
+    const faculties = await this.facultyService.all()
+    return {
+      "data": faculties
+    }
   }
 
   /**
